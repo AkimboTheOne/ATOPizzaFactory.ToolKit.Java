@@ -1,6 +1,3 @@
-# Ignore IDEs workfiles
-.idea
-.vscode
 
 # Ignore Gradle project-specific cache directory
 .gradle
