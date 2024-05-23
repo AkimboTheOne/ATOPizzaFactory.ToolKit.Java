@@ -27,7 +27,12 @@ dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
 }
 
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
+test {
+    dependsOn 'cleanTest'
     useJUnitPlatform()
 }
+
+// $ ./gradlew wrapper --gradle-version 8.0.2 --distribution-type all
+//tasks.register('wrapper', Wrapper) {
+//    gradleVersion = '8.7'
+//}

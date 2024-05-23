@@ -1,0 +1,10 @@
+# https://docs.gradle.org/current/userguide/platforms.html#sub:conventional-dependencies-toml
+# https://docs.gradle.org/8.7/userguide/platforms.html#sub:conventional-dependencies-toml
+
+[versions]
+junit-jupiter = "5.9.1"
+
+[libraries]
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+
+[bundles]
