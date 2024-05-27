@@ -9,6 +9,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id 'maven-publish'
 }
 
 repositories {
@@ -31,6 +32,21 @@ test {
     dependsOn 'cleanTest'
     useJUnitPlatform()
 }
+
+publishing {
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/akimbo2k/ATOPizzaFactory.ToolKit.Java"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
+
 
 // $ ./gradlew wrapper --gradle-version 8.0.2 --distribution-type all
 //tasks.register('wrapper', Wrapper) {
