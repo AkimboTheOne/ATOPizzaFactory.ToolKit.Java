@@ -12,7 +12,7 @@ public interface IPizza {
 
     PizzaSize getSize();
 
-    HashMap<SizeReference, ISizeValue> gegSizeValues();
+    HashMap<SizeReference, ISizeValue> getSizeValues();
 
     double getArea();
 
