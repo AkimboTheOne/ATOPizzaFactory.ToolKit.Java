@@ -8,3 +8,7 @@ build
 # Ignore Java bin & build directory
 **/bin/
 **/build/
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
