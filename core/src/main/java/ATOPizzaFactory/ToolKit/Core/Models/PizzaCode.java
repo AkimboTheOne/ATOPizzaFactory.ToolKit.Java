@@ -3,9 +3,13 @@ package ATOPizzaFactory.ToolKit.Core.Models;
 import ATOPizzaFactory.ToolKit.Core.Codes.IPizzaCode;
 
 public enum PizzaCode implements IPizzaCode<PizzaCode> {
-    DEFAULT("Default non-specific code."),
 
-    INVALID_BUILD_SIZE_PARAMS("Invalid building pizza size params.");
+    NULL_PIZZA_OBJECT("Null pizza object"),
+
+    INVALID_PIZZA_SIZE_TYPE("Invalid pizza type for operation"),
+    INVALID_BUILD_SIZE_PARAMS("Invalid pizza building size params"),
+
+    DEFAULT("Default non-specific pizza code");
 
     private final String message;
 

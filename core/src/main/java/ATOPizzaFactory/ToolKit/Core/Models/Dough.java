@@ -2,7 +2,6 @@ package ATOPizzaFactory.ToolKit.Core.Models;
 
 import ATOPizzaFactory.ToolKit.Core.Models.Components.DoughType;
 import ATOPizzaFactory.ToolKit.Core.Models.Components.ISizeValue;
-import ATOPizzaFactory.ToolKit.Core.Models.Components.SizeMetric;
 import ATOPizzaFactory.ToolKit.Core.Models.Components.SizeReference;
 
 import java.util.HashMap;
