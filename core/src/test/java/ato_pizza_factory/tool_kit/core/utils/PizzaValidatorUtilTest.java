@@ -5,6 +5,9 @@ import ato_pizza_factory.tool_kit.core.models.components.PizzaSize;
 import ato_pizza_factory.tool_kit.core.models.IPizza;
 import ato_pizza_factory.tool_kit.core.models.PizzaCode;
 import ato_pizza_factory.tool_kit.core.models.RoundPizza;
+import ato_pizza_factory.tool_kit.core.models.components.SizeMetric;
+import ato_pizza_factory.tool_kit.core.models.components.SizeReference;
+import ato_pizza_factory.tool_kit.core.models.components.SizeValue;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,18 +37,22 @@ class PizzaValidatorUtilTest {
 
     @Test
     void test_PizzaValidatorUtil_validateCustomSizeInRange_HappyPath() throws PizzaObjectException {
-        IPizza thePizza = new RoundPizza(PizzaSize.PERSONAL);
+        IPizza thePizza = new RoundPizza(20);
 
-        assertEquals(PizzaSize.PERSONAL, thePizza.getSize(), "A PERSONAL size round pizza was created...");
+        assertEquals(PizzaSize.CUSTOM, thePizza.getSize());
 
-        assertDoesNotThrow(() -> PizzaValidatorUtil.validateNonNullPizzaObject(thePizza), "The pizza object is not null...");
+        assertDoesNotThrow(() -> PizzaValidatorUtil.validateCustomSizeInRange(thePizza),
+                "The custom pizza size is within the allowed range...");
     }
 
     @Test
     void test_PizzaValidatorUtil_validateCustomSizeInRange_ToShortException() throws PizzaObjectException {
-        PizzaObjectException theException;
+        IPizza thePizza = new RoundPizza(20);
+        // tamper the size to be invalid
+        thePizza.getSizeValues().put(SizeReference.DIAMETER, new SizeValue(1, SizeMetric.CM));
 
-        theException = assertThrows(PizzaObjectException.class, () -> PizzaValidatorUtil.validateNonNullPizzaObject(new RoundPizza(1)), "The pizza object to short...");
+        PizzaObjectException theException = assertThrows(PizzaObjectException.class,
+                () -> PizzaValidatorUtil.validateCustomSizeInRange(thePizza), "The pizza object too short...");
 
         assertNotNull(theException, "An exception was thrown...");
         assertEquals(PizzaObjectException.class, theException.getClass());
@@ -55,9 +62,12 @@ class PizzaValidatorUtilTest {
 
     @Test
     void test_PizzaValidatorUtil_validateCustomSizeInRange_ToLongException() throws PizzaObjectException {
-        PizzaObjectException theException;
+        IPizza thePizza = new RoundPizza(20);
+        // tamper the size to be invalid
+        thePizza.getSizeValues().put(SizeReference.DIAMETER, new SizeValue(1000, SizeMetric.CM));
 
-        theException = assertThrows(PizzaObjectException.class, () -> PizzaValidatorUtil.validateNonNullPizzaObject(new RoundPizza(1000)), "The pizza object to long...");
+        PizzaObjectException theException = assertThrows(PizzaObjectException.class,
+                () -> PizzaValidatorUtil.validateCustomSizeInRange(thePizza), "The pizza object too long...");
 
         assertNotNull(theException, "An exception was thrown...");
         assertEquals(PizzaObjectException.class, theException.getClass());
