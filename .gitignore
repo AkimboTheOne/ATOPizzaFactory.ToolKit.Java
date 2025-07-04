@@ -12,3 +12,9 @@ build
 # Ignore IDE-specific files
 .idea/
 .vscode/
+
+# Ignore Azure Local Component/Testing files
+AzuriteConfig
+__azurite**
+__blobstorage__
+__queuestorage__
