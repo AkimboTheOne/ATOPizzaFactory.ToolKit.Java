@@ -1,4 +1,15 @@
-// This is the build script for the ATOPFToolKit project.
+/* 
+------------------------------------------------------------------------------------
+Project: ATOPizzaFactory.ToolKit (Library/Toolkit)
+Description:
+    It defines global configuration for all modules, including group, version, and
+    repositories. The script applies the 'java-library' and 'maven-publish' plugins
+    at the project level. Maven Central is used for dependency resolution, and a
+    private Azure Artifacts Maven repository is configured for publishing artifacts.
+    Publishing is protected to prevent accidental uploads unless the property
+    '-PallowPublish=true' is explicitly set.
+------------------------------------------------------------------------------------
+*/
 
 plugins {
     id 'maven-publish'

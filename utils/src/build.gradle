@@ -1,0 +1,26 @@
+/*
+------------------------------------------------------------------------------------
+Module: utils
+Description:
+    The purpose of this module is to provide basic utility classes and patterns
+    for handling "core" objects, as well as the most fundamental terms and helpers
+    possible in Java. It applies the 'java-library' plugin for API/implementation
+    separation. JUnit Jupiter is included for unit testing.
+------------------------------------------------------------------------------------
+*/
+
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    // Internal dependencies
+    implementation project(':core')
+
+    // External dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+test {
+    useJUnitPlatform()
+}
