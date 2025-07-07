@@ -1,6 +1,6 @@
 # ATOPizzaFactory.ToolKit.Java
 
-A modular Java library developed for playground, learning and demo porpoises.
+A modular Java library developed for playground, learning and demo purposes.
 
 
 ## Build Tool (Gradle)

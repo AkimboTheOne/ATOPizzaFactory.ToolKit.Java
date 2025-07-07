@@ -2,17 +2,19 @@ package ato_pizza_factory.tool_kit.core.models;
 
 import ato_pizza_factory.tool_kit.core.exceptions.PizzaObjectException;
 import ato_pizza_factory.tool_kit.core.models.components.PizzaSize;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RoundPizzaTest {
-    @Test
-    void testBuildPersonalRoundPizzaHappyPath() throws PizzaObjectException {
-        RoundPizza thePizza = new RoundPizza(PizzaSize.PERSONAL);
-
-        assertEquals(PizzaSize.PERSONAL, thePizza.getSize(), "A PERSONAL size round pizza was created...");
+    @ParameterizedTest
+    @EnumSource(value = PizzaSize.class, names = {"CUSTOM"}, mode = EnumSource.Mode.EXCLUDE)
+    void testBuildRoundPizzaHappyPath(PizzaSize pizzaSize) throws PizzaObjectException {
+        RoundPizza thePizza = new RoundPizza(pizzaSize);
+        assertEquals(pizzaSize, thePizza.getSize(), "A " + pizzaSize + " size round pizza was created...");
     }
+  
     @Test
     void testBuildSmallRoundPizzaHappyPath() throws PizzaObjectException {
         RoundPizza thePizza = new RoundPizza(PizzaSize.SMALL);
@@ -43,5 +45,4 @@ class RoundPizzaTest {
 
         assertEquals(PizzaSize.THE_BEAST, thePizza.getSize(), "A THE_BEAST size round pizza was created...");
     }
-
 }

@@ -1,4 +1,3 @@
-// This is the build script for the 'core' module of the ATOPFToolKit project.
 
 plugins {
     // Apply the java-library plugin for API and implementation separation.
