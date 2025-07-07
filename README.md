@@ -19,3 +19,26 @@ $ ./gradlew -v
 Gradle 8.7
 ...
 ```
+
+## Running Tests
+
+To execute the unit tests run:
+
+```bash
+./gradlew test
+```
+
+If the dependencies were previously downloaded you can run offline:
+
+```bash
+./gradlew test --offline
+```
+
+## Publishing Artifacts
+
+Publishing is disabled by default. To publish to the configured Maven
+repository you must explicitly allow it:
+
+```bash
+./gradlew publish -PallowPublish=true
+```
