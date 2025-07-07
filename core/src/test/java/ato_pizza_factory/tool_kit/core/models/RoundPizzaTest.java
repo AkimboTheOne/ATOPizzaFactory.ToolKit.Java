@@ -1,11 +1,12 @@
 package ato_pizza_factory.tool_kit.core.models;
 
-import ato_pizza_factory.tool_kit.core.exceptions.PizzaObjectException;
-import ato_pizza_factory.tool_kit.core.models.components.PizzaSize;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import ato_pizza_factory.tool_kit.core.exceptions.PizzaObjectException;
+import ato_pizza_factory.tool_kit.core.models.components.PizzaSize;
 
 class RoundPizzaTest {
     @ParameterizedTest
