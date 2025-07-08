@@ -1,10 +1,10 @@
 package ato_pizza_factory.tool_kit.core.utils;
 
 import ato_pizza_factory.tool_kit.core.exceptions.PizzaObjectException;
-import ato_pizza_factory.tool_kit.core.models.components.PizzaSize;
-import ato_pizza_factory.tool_kit.core.models.components.SizeReference;
 import ato_pizza_factory.tool_kit.core.models.IPizza;
 import ato_pizza_factory.tool_kit.core.models.PizzaCode;
+import ato_pizza_factory.tool_kit.core.models.components.PizzaSize;
+import ato_pizza_factory.tool_kit.core.models.components.SizeReference;
 
 public class PizzaValidatorUtil {
 

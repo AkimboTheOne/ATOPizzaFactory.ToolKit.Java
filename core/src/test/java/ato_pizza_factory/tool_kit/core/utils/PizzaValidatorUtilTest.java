@@ -29,7 +29,7 @@ class PizzaValidatorUtilTest {
     }
 
     @Test
-    void testPizzaValidatorUtilValidateNonNullPizzaObjectThrowsException() throws PizzaObjectException {
+    void testPizzaValidatorUtilValidateNonNullPizzaObjectThrowsException() {
         PizzaObjectException theException;
 
         theException = assertThrows(PizzaObjectException.class, () -> PizzaValidatorUtil.validateNonNullPizzaObject(null), "The pizza object is null...");

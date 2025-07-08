@@ -9,7 +9,6 @@ import ato_pizza_factory.tool_kit.core.models.components.PizzaSize;
 import ato_pizza_factory.tool_kit.core.models.components.SizeMetric;
 import ato_pizza_factory.tool_kit.core.models.components.SizeReference;
 import ato_pizza_factory.tool_kit.core.models.components.SizeValue;
-import ato_pizza_factory.tool_kit.core.utils.PizzaValidatorUtil;
 
 public final class RoundPizza extends Pizza {
 
@@ -23,7 +22,7 @@ public final class RoundPizza extends Pizza {
         super(DoughShape.ROUND);
         super.size = PizzaSize.CUSTOM;
         super.sizeValues.put(SizeReference.DIAMETER, new SizeValue(customSize, SizeMetric.CM));
-        PizzaValidatorUtil.validateCustomSizeInRange(this);
+        super.validateCustomSizePizza();
     }
 
     @Override
