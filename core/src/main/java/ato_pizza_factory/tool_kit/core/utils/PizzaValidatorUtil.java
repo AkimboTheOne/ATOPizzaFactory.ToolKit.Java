@@ -8,7 +8,7 @@ import ato_pizza_factory.tool_kit.core.models.PizzaCode;
 
 public class PizzaValidatorUtil {
 
-    private PizzaValidatorUtil() {}
+    public PizzaValidatorUtil() {}
 
     public static void validateNonNullPizzaObject(IPizza pizza) throws PizzaObjectException {
         if (pizza == null) {

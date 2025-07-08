@@ -12,12 +12,16 @@ Description:
 */
 
 plugins {
-    id 'maven-publish'
-    id 'java-library'
+   id 'maven-publish'
+   id 'java-library'
+}
+
+ext {
+    projectName = 'ATOPizzaFactory.ToolKit'
 }
 
 allprojects {
-    group = 'com.company'
+    group = 'com.akimbotheone.atopizzafactory.toolkit'
     version = '1.0.1-SNAPSHOT'
 
     repositories {

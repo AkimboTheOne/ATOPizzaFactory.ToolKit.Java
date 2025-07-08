@@ -13,3 +13,4 @@ Description:
 rootProject.name = 'ATOPizzaFactory.ToolKit'
 
 include('core')
+include('utils')
